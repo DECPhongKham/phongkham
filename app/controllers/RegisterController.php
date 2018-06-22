@@ -80,13 +80,11 @@ class RegisterController extends \Phalcon\Mvc\Controller
 						}
 		 			}else{
 		 				$this->flashSession->error("Tên đăng nhập đã tồn tại!");
-						return $this ->response->redirect('register');
-		 				
+						return $this ->response->redirect('register');		
+			 			}
 		 			}
 	 			}
- 			}
- 		}
-		
-    }
+	 		}	
+	    }
+	}
 }
-

@@ -40,7 +40,7 @@ class LoginregisController extends \Phalcon\Mvc\Controller
 			    			$id = $row['id'];
 			    			$this->session->set('role', $role);
 			    			$this->session->set('id', $id);
-				    		$this->response->redirect('dashboard/dashboard1');
+				    		$this->response->redirect('dashboard/dashboard');
 			    		}
 			    	}else{
 			    		$this->flashSession->error("Tài khoản không chính xác");
@@ -53,6 +53,15 @@ class LoginregisController extends \Phalcon\Mvc\Controller
     public function sessionAction()    
     {
     	
+    }
+    public function logoutAction()
+    {
+        $this->session->destroy();
+        $this ->response->redirect();
+    }
+    public function returnAction()
+    {
+        $this ->response->redirect();
     }
 }
 
