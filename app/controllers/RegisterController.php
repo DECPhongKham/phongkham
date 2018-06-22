@@ -20,8 +20,8 @@ class RegisterController extends \Phalcon\Mvc\Controller
  				$this->flashSession->error("Không được để trống tên tài khoản!");
 				return $this ->response->redirect('register');
 	 	}else{
- 			$user = trim($user," ");
- 			if($user ===""){
+ 			$user2 = trim($user," ");
+ 			if($user2 ===""){
  				$this->flashSession->error("Tên tài không được là dấu cách!");
 				return $this ->response->redirect('register');
  			}else{
@@ -29,8 +29,8 @@ class RegisterController extends \Phalcon\Mvc\Controller
  				$this->flashSession->error("Không được để trống tên mật khẩu!");
 				return $this ->response->redirect('register');
 				}else{
-	 				$user = User::findFirst("account ='$user'");
-		 			if($user === false){
+	 				$users = User::findFirst("account ='$user'");
+		 			if($users === false){
 		 				// Xét vai trò để phân loại tài khoản
 		 				//====================================
 		 				if ($this->session->has('role')) {
@@ -54,7 +54,8 @@ class RegisterController extends \Phalcon\Mvc\Controller
 										return $this ->response->redirect('register');
 									}
 			 					}
-			 				}else{
+			 				}
+			 			}else{
 		 				//====================================
 			 				if($pw === $cpw){
 				 				$array = array(
@@ -82,7 +83,7 @@ class RegisterController extends \Phalcon\Mvc\Controller
 		 				$this->flashSession->error("Tên đăng nhập đã tồn tại!");
 						return $this ->response->redirect('register');		
 			 			}
-		 			}
+		 			
 	 			}
 	 		}	
 	    }
