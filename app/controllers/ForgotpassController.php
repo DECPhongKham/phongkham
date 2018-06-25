@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Controllers;
 class ForgotpassController extends \Phalcon\Mvc\Controller
 {
 

@@ -19,7 +19,7 @@
                 <a href="#" class="active" id="login-form-link">Đăng nhập</a>
               </div>
               <div class="col-xs-6">
-                <a href="register">Đăng ký</a>
+                <a href="/phongkham/register/register">Đăng ký</a>
               </div>
             </div>
             <hr>

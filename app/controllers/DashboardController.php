@@ -1,4 +1,6 @@
 <?php
+
+namespace App\Controllers;
 use Phalcon\Mvc\View;
 use Phalcon\Db\Adapter\Pdo\Mysql;
 use Phalcon\Db\Column;
@@ -15,7 +17,8 @@ class DashboardController extends \Phalcon\Mvc\Controller
         if (!$this->session->has('id')) {
           $this->response->redirect();
         }else{
-    	      $this->view->setRenderLevel(View::LEVEL_LAYOUT);
+
+             $this->view->setRenderLevel(View::LEVEL_LAYOUT);
         }
     }
     

@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Controllers;
 class LogoutController extends \Phalcon\Mvc\Controller
 {
 

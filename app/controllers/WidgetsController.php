@@ -2,6 +2,7 @@
 use Phalcon\Mvc\View;
 use Phalcon\Db\Adapter\Pdo\Mysql;
 use Phalcon\Db\Column;
+namespace App\Controllers;
 class WidgetsController extends \Phalcon\Mvc\Controller
 {
 
