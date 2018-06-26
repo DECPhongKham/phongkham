@@ -41,7 +41,13 @@ class LoginregisController extends \Phalcon\Mvc\Controller
 			    			$id = $row['id'];
 			    			$this->session->set('role', $role);
 			    			$this->session->set('id', $id);
-				    		$this->response->redirect('dashboard/dashboard');
+			    			if($role == 0 ){
+				    			$this->response->redirect('dashboard/dashboard');
+				    		}else{
+				    			if($role == 2){
+				    				$this->response->redirect('menukh');
+				    			}
+				    		}
 			    		}
 			    	}else{
 			    		$this->flashSession->error("Tài khoản không chính xác");
