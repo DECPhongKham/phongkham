@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprint: Page Stack Navigation</title>
+	<meta name="description" content="Blueprint: A basic template for a page stack navigation effect" />
+	<meta name="keywords" content="blueprint, template, html, css, page stack, 3d, perspective, navigation, menu" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/demobs.css" />
+	<link rel="stylesheet" type="text/css" href="css/componentbs.css" />
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="js/modernizr-custombs.js"></script>
+</head>
+
+<body>
+	<!-- navigation -->
+	<nav class="pages-nav">
+		<div class="pages-nav__item"><a class="link link--page" href="#page-home">Trang chủ</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-docu">Thông tin cá nhân</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-manuals">Lịch hẹn</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-software">Liên hệ</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-custom">Chăm sóc &amp; Dịch vụ</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-training">Training</a></div>
+	
+		<div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-blog">Đăng xuất</a></div>
+		
+		<div class="pages-nav__item pages-nav__item--social">
+			<a class="link link--social link--faded" href="#"><i class="fa fa-twitter"></i><span class="text-hidden">Twitter</span></a>
+			<a class="link link--social link--faded" href="#"><i class="fa fa-linkedin"></i><span class="text-hidden">LinkedIn</span></a>
+			<a class="link link--social link--faded" href="#"><i class="fa fa-facebook"></i><span class="text-hidden">Facebook</span></a>
+			<a class="link link--social link--faded" href="#"><i class="fa fa-youtube-play"></i><span class="text-hidden">YouTube</span></a>
+		</div>
+	</nav>
+	<!-- /navigation-->
+	<!-- pages stack -->
+	<div class="pages-stack">
+		<!-- page -->
+		<div class="page" id="page-home">
+			<!-- Blueprint header -->
+			<header class="bp-header cf">
+				<span class="bp-header__present">Phòng khám DEC <span class="bp-tooltip bp-icon bp-icon--about" data-content="Phòng khám DEC phục vụ quý khách tận tâm nhanh chóng"></span></span>
+				<h1 class="bp-header__title">Hân hạnh phục vụ</h1>
+				<p class="bp-header__desc">Bản quyền bởi <a href="">Công ty DEC</a></p>
+				<nav class="bp-nav">
+					<a class="bp-nav__item bp-icon bp-icon--prev" href="" data-info="Quay về trang chủ"><span>Previous Blueprint</span></a>
+					<!--a class="bp-nav__item bp-icon bp-icon--next" href="" data-info="next Blueprint"><span>Next Blueprint</span></a-->
+					
+					
+				</nav>
+			</header>
+			<img class="poster" src="img/1.png" alt="img01" />
+		</div>
+		<!-- /page -->
+		<div class="page" id="page-docu">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Thông tin cá nhân</h1>
+				<p class="bp-header__desc">Nguyễn tất đạt <a href="">Bác sĩ thẩm mĩ</a></p>
+				<p class="info">
+					1/1/1997 
+				</p>
+				<p class="info">
+					Chuyên khoa 
+				</p>
+				<p class="info">
+					Kỹ năng 
+				</p>
+				<p class="info">
+					Mô tả
+				</p>
+			</header>
+			<img class="poster" src="img/6.png" alt="img06" />
+
+		</div>
+		<div class="page" id="page-manuals">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Lịch hẹn</h1>
+				<p class="bp-header__desc">Tất cả các thông tin của bênh nhân được thống kê bên dưới</p>
+				<!-- <p class="info">
+					"When you adopt a vegan diet we make a connection, you don't go back, it is not a diet, it is a lifestyle." &mdash; Freelee Frugivore
+				</p> -->
+				<div class="table-responsive" style="padding: 5px">  
+    			<table align="left" class="table table-striped table-condensed table-bordered table-dark table-sm">
+                  <thead>
+                  <h1 style="font-size: 40px; padding: 5px;">Danh sách cuộc hẹn</h1>
+                  <tr>
+                      <th class="info">Ngày</th>
+                      <th class="info">Thời gian</th>
+                      <th class="info">Tên khách hàng</th>
+                      <th class="info">Triệu chứng </th>
+                      <th class="text-center info">Trạng thái</th>
+                     
+                  </tr>
+              </thead>   
+              <tbody>
+                <tr>
+                    
+                    <td>2015/03/06</td>
+                    <td>12:00 PM</td>
+                    <td>Cairo</td>
+                    <td>Aswan</td>
+               
+                     <td class="text-center"><a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-ok"></span> Chấp nhận</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Từ chối</a></td>
+              
+                 
+                    </td>                                       
+                </tr>
+                <tr>
+                    
+                    <td>2015/5/07</td>
+                    <td>8:00 PM</td>
+                    <td>Cairo</td>
+                    <td>Suez</td>
+              
+                    <td class="text-center">
+                      <a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-ok"></span> Chấp nhận</a> 
+                      <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Từ chối</a>
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>2015/07/10</td>
+                    <td>12:00 AM</td>
+                    <td>Alexandria</td>
+                    <td>Cairo</td>
+           
+                    <td class="text-center">
+                      <a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-ok"></span> Chấp nhận</a> 
+                      <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Từ chối</a>
+                    </td>
+                </tr>
+                <tr>
+                
+                    <td>2015/11/11</td>
+                    <td>3:00 PM</td>
+                    <td>Alexandria</td>
+                    <td>Cairo</td>
+      
+                    <td class="text-center">
+                      <a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-ok"></span> Chấp nhận</a> 
+                      <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Từ chối</a>
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>2015/12/13</td>
+                    <td>5:00 PM</td>
+                    <td>Alexandria</td>
+                    <td>Cairo</td>
+         
+                    <td class="text-center">
+                      <a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-ok"></span> Chấp nhận</a> 
+                      <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Từ chối</a>
+                    </td>
+                  
+                </tr>
+              
+            </table>
+		</div>
+			</header>
+			<!-- <img class="poster" src="img/2.jpg" alt="img02" /> -->
+		</div>
+		<div class="page" id="page-software">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Liên hệ</h1>
+				<p class="bp-header__desc">Mọi thông tin liên hệ qua email <a href="">Gửi mail tại đây</a></p>
+				<p class="info">
+					"Số 10 &mdash; Bàu Cát 1 &mdash; Tân Bình &mdash; TP.HCM" 
+				</p>
+			</header>
+			<img class="poster" src="img/3.png" alt="img03" />
+		</div>
+		<div class="page" id="page-custom">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Chăm sóc &amp; Dịch vụ</h1>
+				<p class="bp-header__desc">Dịch vụ chăm sóc tại nhà <a href="">Xem danh sách</a></p>
+				<p class="info">
+					"You have to make a conscious decision to change for your own well-being, that of your family and your country." &mdash;Bill Clinton
+				</p>
+			</header>
+			<img class="poster" src="img/4.png" alt="img04" />
+		</div>
+		<div class="page" id="page-training">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Training &amp; Learning Center</h1>
+				<p class="bp-header__desc">Training kỹ năng <a href="">Xem thêm</a></p>
+				<p class="info">
+					"Lịch trainning sẽ được cập nhật trong thời gian tới" &mdash; Comming soon!
+				</p>
+			</header>
+			<img class="poster" src="img/5.png" alt="img05" />
+		</div>
+	</div>
+	<!-- /pages-stack -->
+	<button class="menu-button"><span>Menu</span></button>
+	<script src="js/classiebs.js"></script>
+	<script src="js/mainbs.js"></script>
+</body>
+
+</html>

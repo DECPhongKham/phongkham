@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+use App\Models\User;
 class ChangeController extends \Phalcon\Mvc\Controller
 {
 
