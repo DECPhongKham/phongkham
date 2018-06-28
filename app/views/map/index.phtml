@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Autocomplete</title>
+    <link rel="stylesheet" type="text/css" href="css/map.css">
+    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+  </head>
+  <body>
+    <input id="origin-input" class="controls" type="text"
+        placeholder="Nhập vị trí xuất phát">
+
+    <input id="destination-input" class="controls" type="text"
+        placeholder="Nhập vị trí đích">
+
+    <div id="mode-selector" class="controls">
+      <input type="radio" name="type" id="changemode-walking" checked="checked">
+      <label for="changemode-walking">Walking</label>
+
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
+
+      <input type="radio" name="type" id="changemode-driving">
+      <label for="changemode-driving">Driving</label>
+      <input id="pac-input" class="controls" type="text" placeholder="Tìm Kiếm">
+      
+    </div>
+
+    <div id="map"></div>
+    	<?php
+    		echo $this->getContent();
+    	?>
+      <?php
+// star load xml file
+        $db_host='localhost';
+        $db_user='root';
+        $db_pass='';
+        $db_name='gdien';
+        $connect_db=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+        // $select_db=mysql_select_db($db_name,$connect_db);
+        // $set_lang_db=mysqli_query($connect_db,"SET NAME 'utf8'");
+        $connect_db->set_charset("utf8");
+        $sql="SELECT * from marker";
+        $query=mysqli_query($connect_db,$sql);
+
+        $domdoc=new DOMDocument('1.0','utf-8');
+        $domdoc->formatOutput=true;
+        $domdoc->preserveWhiteSpace = FALSE;
+
+        $marker=$domdoc->createElement('markers');
+        $domdoc->appendChild($marker);
+
+        // Iterate through the rows, adding XML nodes for each
+        while ($row = mysqli_fetch_array($query)){
+          // Add to XML document node
+          $row_id=$row['id'];
+          $row_name=$row['name'];
+          $row_address=$row['address'];
+          $row_lat=$row['lat'];
+          $row_lng=$row['lng'];
+          $row_type=$row['type'];
+
+          $markers = $domdoc->createElement("marker");
+          $marker->appendChild($markers);
+
+          $id=$domdoc->createAttribute('id');
+          $id->appendChild($domdoc->createTextNode("$row_id"));
+          $markers->appendChild($id);
+
+          $name=$domdoc->createAttribute('name');
+          $name->appendChild($domdoc->createTextNode("$row_name"));
+          $markers->appendChild($name);
+
+          $address=$domdoc->createAttribute('address');
+          $address->appendChild($domdoc->createTextNode("$row_address"));
+          $markers->appendChild($address);
+
+          $lat=$domdoc->createAttribute('lat');
+          $lat->appendChild($domdoc->createTextNode("$row_lat"));
+          $markers->appendChild($lat);
+
+          $lng=$domdoc->createAttribute('lng');
+          $lng->appendChild($domdoc->createTextNode("$row_lng"));
+          $markers->appendChild($lng);
+
+          $type=$domdoc->createAttribute('type');
+          $type->appendChild($domdoc->createTextNode("$row_type"));
+          $markers->appendChild($type);
+
+          // $newnode->set_attribute("id", $row['id']);
+          // $newnode->set_attribute("name", $row['name']);
+          // $newnode->set_attribute("address", $row['address']);
+          // $newnode->set_attribute("lat", $row['lat']);
+          // $newnode->set_attribute("lng", $row['lng']);
+          // $newnode->set_attribute("type", $row['type']);
+        }
+
+        // $xmlfile = $doc->dump_mem();
+        // echo $xmlfile;
+
+          $domdoc->save('markers1.xml');
+          //end load xml file
+    ?>
+    <script src="js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVQEAPAglsyD2w7rWppn2Te21X5rWrMo4&libraries=places&callback=initMap"
+        async defer>
+    </script>
+  </body>
+  
+</html>
